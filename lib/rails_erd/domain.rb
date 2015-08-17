@@ -97,6 +97,7 @@ module RailsERD
 
     def relationships_mapping
       @relationships_mapping ||= {}.tap do |mapping|
+        puts mapping.inspect
         relationships.each do |relationship|
           (mapping[relationship.source.name] ||= []) << relationship
           (mapping[relationship.destination.name] ||= []) << relationship
